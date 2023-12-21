@@ -8,10 +8,13 @@ export const UserController = async (req, res) => {
     $set: {
       name: user.name,
       photo: user.photo,
+      email: user.email,
     },
   };
   const options = {
     upsert: true,
+    new: true,
+    setDefaultsOnInsert: true,
   };
 
   try {

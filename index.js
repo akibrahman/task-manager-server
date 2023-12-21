@@ -3,7 +3,8 @@ import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
 import IndexRoute from "./Routes/IndexRoute.js";
-import UsersRoute from "./Routes/UsersRoute.js";
+import { TaskRoute } from "./Routes/TaskRoute.js";
+import UserRoute from "./Routes/UserRoute.js";
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -26,7 +27,8 @@ app.use(
 );
 app.use(express.json());
 app.use("/", IndexRoute);
-app.use("/manage-users", UsersRoute);
+app.use("/manage-users", UserRoute);
+app.use("/task", TaskRoute);
 
 app.listen(port, () => {
   console.log(`Task Management System is Running on Port - ${port}`);
