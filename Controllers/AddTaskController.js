@@ -1,6 +1,6 @@
 import { TaskModel } from "../Models/TaskModel.js";
 
-export const TaskController = async (req, res) => {
+export const AddTaskController = async (req, res) => {
   try {
     const task = await req.body;
     const result = await TaskModel.create(task);

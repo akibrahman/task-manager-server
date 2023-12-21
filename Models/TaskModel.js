@@ -8,6 +8,10 @@ const TaskSchema = new mongoose.Schema({
     required: true,
   },
   priority: String,
+  status: {
+    type: String,
+    default: "toDo",
+  },
 });
 
 export const TaskModel = mongoose.model("task", TaskSchema);

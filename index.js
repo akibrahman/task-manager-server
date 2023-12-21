@@ -2,8 +2,9 @@ import cors from "cors";
 import "dotenv/config";
 import express from "express";
 import mongoose from "mongoose";
+import { AddTaskRoute } from "./Routes/AddTaskRoute.js";
+import { GetTasksRoute } from "./Routes/GetTasksRoute.js";
 import IndexRoute from "./Routes/IndexRoute.js";
-import { TaskRoute } from "./Routes/TaskRoute.js";
 import UserRoute from "./Routes/UserRoute.js";
 
 const app = express();
@@ -28,7 +29,9 @@ app.use(
 app.use(express.json());
 app.use("/", IndexRoute);
 app.use("/manage-users", UserRoute);
-app.use("/task", TaskRoute);
+app.use("/add-task", AddTaskRoute);
+app.use("/get-tasks", GetTasksRoute);
+// app.use("/change-task-status", ChangeTaskStatus);
 
 app.listen(port, () => {
   console.log(`Task Management System is Running on Port - ${port}`);
