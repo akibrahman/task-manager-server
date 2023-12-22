@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const TaskSchema = new mongoose.Schema({
-  userId: String,
+  user: String,
   title: String,
   description: String,
   deadline: {
