@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import { AddTaskRoute } from "./Routes/AddTaskRoute.js";
 import { ChangeTaskStatusRoute } from "./Routes/ChangeTaskStatusRoute.js";
 import { DeleteTaskRoute } from "./Routes/DeleteTaskRoute.js";
+import { EditTaskRoute } from "./Routes/EditTaskRoute.js";
+import { GetTaskRoute } from "./Routes/GetTaskRoute.js";
 import { GetTasksRoute } from "./Routes/GetTasksRoute.js";
 import { GetUserRoute } from "./Routes/GetUserRoute.js";
 import IndexRoute from "./Routes/IndexRoute.js";
@@ -35,7 +37,9 @@ app.use("/get-user", GetUserRoute);
 app.use("/manage-users", UserRoute);
 app.use("/add-task", AddTaskRoute);
 app.use("/delete-task", DeleteTaskRoute);
+app.use("/edit-task", EditTaskRoute);
 app.use("/get-tasks", GetTasksRoute);
+app.use("/get-task", GetTaskRoute);
 app.use("/change-task-status", ChangeTaskStatusRoute);
 
 app.listen(port, () => {
